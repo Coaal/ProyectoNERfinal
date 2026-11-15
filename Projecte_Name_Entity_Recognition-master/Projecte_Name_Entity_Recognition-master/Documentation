@@ -1,0 +1,41 @@
+Proycto hecho por Alfredo
+
+Los documentos vienen de data/plain/validation.jsonl, hemos pasado el texto por gliner
+
+Las prediciones se guarddan en JSONL en results/
+
+Hay 4 Tasks
+
+Task1 que es la de plain text:
+JSONL -> GLiNER -> predictions.
+
+Taks 2 que es la de cleanPDFS:
+PDF -> PyMuPDF -> text -> GLiNER -> predictions.
+
+La task3 que es la de pdfs escaneados:   (esata es la mas liosa ya que no podemos sacar texto de una foto almenos con el pymupdf la que mas me ha costado entender)
+PDF -> PyMuPDF -> text -> Gliner
+
+Y finalmente la task 4 que es la de LLM que se lo he preguntado al claude sin usar api directamente por chat.
+
+De modelo de gliner he usado el small (gliner-community/gliner_small-v2.5) y en la task 1 para comparar he usado el medium (gliner_medium-v2.5.)
+
+Para la extracion de librerias de pdf he usado PyMupdf usando "page.get_text()" como explicaba el el repo de git.
+
+otras librerias usadas:
+-Jupyter (Que se tiene que usar en localhost en browser pq en PyCharm es de pago la funcion esa por algun motivo que desconozco)
+-Python
+
+En clase use los ordenadores de clase (spoiler tardaban 30 años en hacer cualquier predicion) y en casa use mi ordenador de sobremesa con windows 11 y una 1650 algo con lo cual no se podia usar CUDA y teniamos que cambiar a GPU.
+
+
+
+he encontrado 3000 problemas en la practica entre que aveces ponia mal los nombres de las cosas y que al definir rutas las ponia mal muchas veces cuando llevaba mas de 20 mins intentando encontrar el error cuando no podia mas acababa preguntandole a la ia para que me lo explicase como si fuera mi profesor porque sino no habia manera.
+He trabjado con inference.py casi toda la practica con el nombre mal ya que empezo con interface.py y luego cuando me he dado cuenta al final he tenido que hacer un refactoring.
+
+
+Texto plano vs PDF
+- Texto plano: Los resultados se muestran directamente como texto, fáciles de leer y copiar.
+- PDF: Los resultados se muestran en un documento PDF, manteniendo el formato y la estructura.
+Evaluación estricta vs relajada
+- Estricta : Exige que el resultado coincida exactamente con el esperado.
+- Relajada : Acepta pequeñas diferencias, aunque el resultado sea equivalente o correcto.
